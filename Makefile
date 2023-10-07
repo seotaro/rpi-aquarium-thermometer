@@ -10,7 +10,11 @@ setup-node:
 
 	sudo apt-get update
 	sudo apt-get install nodejs -y
-	sudo npm install --global yarn electron electron-builder
+	sudo npm install --global yarn
+
+setup-1-wire:
+	echo "dtoverlay=w1-gpio" | sudo tee -a /boot/config.txt
+
 
 setup-autostart:
 	mkdir -p ~/.config/lxsession/LXDE-pi
