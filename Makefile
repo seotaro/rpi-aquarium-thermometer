@@ -10,8 +10,7 @@ setup-node:
 
 	sudo apt-get update
 	sudo apt-get install nodejs -y
-	sudo npm install --global yarn
-	yarn add --dev electron
+	sudo npm install --global yarn electron electron-builder
 
 setup-autostart:
 	mkdir -p ~/.config/lxsession/LXDE-pi

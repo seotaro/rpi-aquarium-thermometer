@@ -28,7 +28,7 @@
   "scripts": {
     "react-start": "cross-env BROWSER=none react-scripts start",
     "react-build": "react-scripts build",
-    "electron-start": "wait-on http://localhost:3000 && electron .",
+    "electron-start": "wait-on tcp:127.0.0.1:3000 && electron .",
     "electron-build": "electron-builder",
     "electron-build-for-rpi": "electron-builder --linux --armv7l",
     "start": "run-p react-start electron-start",
