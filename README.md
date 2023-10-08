@@ -67,6 +67,7 @@ ls /sys/bus/w1/devices/
 
 ```bash
 cd {'rpi-aquarium-thermometer'}
+yarn
 yarn start
 ```
 
@@ -100,6 +101,7 @@ yarn start
 
 ```bash
 cd {'rpi-aquarium-thermometer'}
+yarn
 yarn build
 mv dist/rpi-aquarium-thermometer-0.1.0-armv7l.AppImage /home/pi
 ```
