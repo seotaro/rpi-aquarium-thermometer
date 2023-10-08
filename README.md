@@ -11,7 +11,7 @@
 
 ## センサー
 
-1-Wire インターフェイスの DS18B20 が精度も良く手軽に使え、水中用途に加工されたものが安価に入手できるのでおすすめ。
+1-Wire インターフェイスの DS18B20 が手軽に精度良く使え、水中用途に加工されたものが安価に入手できるのでおすすめ。
 
 ![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/6b31e91b-24c5-42be-8f83-0be1be4eddaf)
 
@@ -122,10 +122,8 @@ make disable-autostart
 
 メモリが少ないモデル（Raspberry Pi 3A+ など）はメモリ不足でビルドができないことがある。スペックの高いラズパイでビルドして使用することができる。Electron なので Mac や Windows でクロスビルドできるはずなのだが、うまくいっていない。
 
-ビルドした AppImage を実行するラズパイに保存して、下記のように実行する。
-Node.js のセットアップは不要であるが、1-Wire インターフェイスは有効にしておく。
-
-※ コマンドはデスクトップモードで実行する.
+Node.js のセットアップは不要であるが、1-Wire インターフェイスはあらかじめ有効にしておくこと。
+ビルドした AppImage を実行するラズパイに保存して、下記のようにデスクトップモードで実行する。
 
 ```bash
 chmod +x rpi-aquarium-thermometer-0.1.0-armv7l.AppImage
