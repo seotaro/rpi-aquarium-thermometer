@@ -7,7 +7,7 @@
 - Electron + React + Sqlite
 - ローカルデータベース
 
-![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/682a4fde-fc3a-436e-95ba-15486f85d387)
+![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/16ae5d8d-1bb5-4080-a774-03fc5c528532)
 
 ## センサー
 
@@ -86,6 +86,7 @@ yarn start
 
     // センサー名称の定義例）
     "DEVICES": {
+      "id": "name",
       "28-xxxxxxxxxxxx": "90cm tank",
       "28-yyyyyyyyyyyy": "45cm tank-1",
       "28-zzzzzzzzzzzz": "45cm tank-2"
