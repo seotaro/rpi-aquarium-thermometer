@@ -7,13 +7,13 @@
 - Electron + React + Sqlite
 - ローカルデータベース
 
-![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/16ae5d8d-1bb5-4080-a774-03fc5c528532)
+<img width="50%" src="https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/61ef6065-8a79-4e20-ab30-1cba1e4fd7ce"/>
 
 ## センサー
 
 1-Wire インターフェイスの DS18B20 が手軽に精度良く使え、水中用途に加工されたものが安価に入手できるのでおすすめ。
 
-![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/6b31e91b-24c5-42be-8f83-0be1be4eddaf)
+<img width="50%" src="https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/8c4c2781-dd82-425f-8f91-0d6ef2453f3e"/>
 
 センサーとラズパイは次のように接続する。センサー側コードの色は要確認のこと。複数のセンサーがある場合は並列に接続していく。DQ にはプルアップ抵抗 4.7[kΩ]を接続する。
 
@@ -33,7 +33,7 @@
 Raspberry Pi OS with desktop をセットアップする.
 ここでは 'pi' ユーザーであるものとして進めていく。
 
-![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/8dcb66fd-17d6-46c5-b309-436bd1638f3c)
+<img width="50%" src="https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/23678573-d958-4fd1-b8ab-7823ba4e57eb"/>
 
 Github のリポジトリをローカルにコピーする。
 
