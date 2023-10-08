@@ -16,7 +16,7 @@ enable-1-wire:
 	echo "dtoverlay=w1-gpio" | sudo tee -a /boot/config.txt
 
 
-setup-autostart:
+enable-autostart:
 	mkdir -p ~/.config/lxsession/LXDE-pi
 	cp /etc/xdg/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi
 	echo "@xset s off" >> ~/.config/lxsession/LXDE-pi/autostart
@@ -24,3 +24,6 @@ setup-autostart:
 	echo "@xset -dpms" >> ~/.config/lxsession/LXDE-pi/autostart
 	echo "/home/pi/aquarium-0.1.0-armv7l.AppImage" >> ~/.config/lxsession/LXDE-pi/autostart
 
+disable-autostart:
+	mkdir -p ~/.config/lxsession/LXDE-pi
+	cp /etc/xdg/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi

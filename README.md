@@ -92,8 +92,6 @@ yarn start
 
 ## ラズパイ起動で実行
 
-※ コマンドはデスクトップモードで実行する.
-
 ビルドする。
 
 ```bash
@@ -103,21 +101,28 @@ mv dist/rpi-aquarium-thermometer-0.1.0-armv7l.AppImage /home/pi
 ```
 
 ラズパイ起動時に自動で実行されるよう設定する。
+ログは /home/pi/.cache/lxsession/LXDE-pi/run.log に出力される。
 
 ```bash
-make setup-autostart
+make enable-autostart
 ```
 
 リブートする。
 
-※ ログは /home/pi/.cache/lxsession/LXDE-pi/run.log に出力される。
+自動で実行しないようにするには下記を実行する。
+
+```bash
+make disable-autostart
+```
 
 ## 他のマシンでビルドして実行
 
-メモリが少ないモデル（Raspberry Pi 3A+ など）はメモリ不足でビルドができないことがある。スペックの高いラズパイでビルドして使用することができる。※ Electron なので Mac や Windows でクロスビルドできるはずなのだが、うまくいっていない。
+メモリが少ないモデル（Raspberry Pi 3A+ など）はメモリ不足でビルドができないことがある。スペックの高いラズパイでビルドして使用することができる。Electron なので Mac や Windows でクロスビルドできるはずなのだが、うまくいっていない。
 
 ビルドした AppImage を実行するラズパイに保存して、下記のように実行する。
 Node.js のセットアップは不要であるが、1-Wire インターフェイスは有効にしておく。
+
+※ コマンドはデスクトップモードで実行する.
 
 ```bash
 chmod +x rpi-aquarium-thermometer-0.1.0-armv7l.AppImage
