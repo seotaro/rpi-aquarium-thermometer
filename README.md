@@ -29,7 +29,7 @@ Raspberry Pi OS with desktop をセットアップする.
 
 ※ ここでは 'pi' ユーザーであるものとして進めていく。
 
-![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/ea9420ac-068f-4bb1-9790-c6cf709430ae)
+![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/8dcb66fd-17d6-46c5-b309-436bd1638f3c)
 
 Github のリポジトリをローカルにコピーする。
 
