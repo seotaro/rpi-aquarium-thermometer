@@ -13,7 +13,7 @@
 
 ![image](https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/6b31e91b-24c5-42be-8f83-0be1be4eddaf)
 
-センサーとラズパイは次のように接続する。センサー側コードの色は要確認のこと。複数のセンサーがある場合は並列に接続していく。DQ はプルアップ抵抗 4.7[kΩ]を接続する。
+センサーとラズパイは次のように接続する。センサー側コードの色は要確認のこと。複数のセンサーがある場合は並列に接続していく。DQ にはプルアップ抵抗 4.7[kΩ]を接続する。
 
 | センサー  |    ラズパイ     |
 | --------- | --------------- |
@@ -21,7 +21,10 @@
 | DQ （黄） | GPIO 4          |
 | GND（黒） | Ground          |
 
-[GPIO and the 40-pin Header](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html)
+【参考】
+
+- [DS18B20](https://github.com/seotaro/rpi-aquarium-thermometer/files/12840952/2812.pdf)
+- [GPIO and the 40-pin Header](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html)
 
 ## Raspberry Pi のセットアップ
 
@@ -47,7 +50,7 @@ make setup-node
 1-Wire インターフェイスを有効にする。
 
 ```bash
-make setup-1-wire
+make enable-1-wire
 ```
 
 リブートして、1-Wire デバイスを確認する。
@@ -64,6 +67,27 @@ ls /sys/bus/w1/devices/
 ```bash
 cd {'rpi-aquarium-thermometer'}
 yarn start
+```
+
+データベースファイル
+/home/pi/.config/rpi-aquarium-thermometer/database.db
+
+設定ファイル
+/home/pi/.config/rpi-aquarium-thermometer/config.json
+
+```json
+{
+    "READ_SENSOR_INTERVAL": 10000,          // センサーの読み取り間隔 [ms]
+    "DELETE_DATABASE_INTERVAL": 3600000,    // データベースを削除する間隔 [ms]
+    "DS18B20": "on",                        // DS18B20 を有効にする
+
+    // センサー名称の定義
+    "DEVICES": {
+      "28-xxxxxxxxxxxx": "90cm tank",
+      "28-yyyyyyyyyyyy": "45cm tank-1",
+      "28-zzzzzzzzzzzz": "45cm tank-2"
+    }
+}
 ```
 
 ## ラズパイ起動で実行
@@ -85,3 +109,17 @@ make setup-autostart
 ```
 
 リブートする。
+
+※ ログは /home/pi/.cache/lxsession/LXDE-pi/run.log に出力される。
+
+## 他のマシンでビルドして実行
+
+メモリが少ないモデル（Raspberry Pi 3A+ など）はメモリ不足でビルドができないことがある。スペックの高いラズパイでビルドして使用することができる。※ Electron なので Mac や Windows でクロスビルドできるはずなのだが、うまくいっていない。
+
+ビルドした AppImage を実行するラズパイに保存して、下記のように実行する。
+Node.js のセットアップは不要であるが、1-Wire インターフェイスは有効にしておく。
+
+```bash
+chmod +x rpi-aquarium-thermometer-0.1.0-armv7l.AppImage
+./rpi-aquarium-thermometer-0.1.0-armv7l.AppImage
+```

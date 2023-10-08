@@ -12,7 +12,7 @@ setup-node:
 	sudo apt-get install nodejs -y
 	sudo npm install --global yarn
 
-setup-1-wire:
+enable-1-wire:
 	echo "dtoverlay=w1-gpio" | sudo tee -a /boot/config.txt
 
 
