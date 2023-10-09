@@ -20,7 +20,7 @@ export const Chart = ({ values, devices, sensor, range }) => {
       const data = Object.keys(valuesByDevice).map(t => [Number(t), valuesByDevice[t]]);
 
       return {
-        lineWidth: 3,
+        lineWidth: 1,
         downsample: { threshold: 100 },
         name: devices[deviceId] ? devices[deviceId] : deviceId,
         data,
