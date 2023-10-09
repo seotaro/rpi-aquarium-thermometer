@@ -7,7 +7,7 @@
 - Electron + React + Sqlite
 - ローカルデータベース
 
-<img width="50%" src="https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/61ef6065-8a79-4e20-ab30-1cba1e4fd7ce"/>
+<img width="50%" src="https://github.com/seotaro/rpi-aquarium-thermometer/assets/46148606/0f1b0c71-c7e8-4f46-ba2d-cf81d9d0abd0">
 
 ## センサー
 
