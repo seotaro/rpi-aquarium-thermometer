@@ -1,12 +1,14 @@
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import HighchartMore from 'highcharts/highcharts-more';
+import HighchartsDownSample from './highcharts-downsample';
 
 HighchartMore(Highcharts);
 Highcharts.setOptions({
   global: { useUTC: false },
   colors: ["#7cb5ec", "#90ed7d", "#f7a35c", "#8085e9", "#f15c80", "#e4d354", "#2b908f", "#f45b5b", "#91e8e1"]
 });
+HighchartsDownSample(Highcharts);
 
 // グラフ
 export const Chart = ({ values, devices, sensor, range }) => {
@@ -18,7 +20,8 @@ export const Chart = ({ values, devices, sensor, range }) => {
       const data = Object.keys(valuesByDevice).map(t => [Number(t), valuesByDevice[t]]);
 
       return {
-        type: 'line',
+        lineWidth: 1,
+        downsample: { threshold: 100 },
         name: devices[deviceId] ? devices[deviceId] : deviceId,
         data,
         tooltip: {
