@@ -3,7 +3,7 @@
 アクアリウム用の水温ロガー。計測とグラフ表示を行う。
 
 - Raspberry Pi
-- 1-Wire インターフェイスの複数センサー
+- DS18B20
 - Electron + React + Sqlite
 - ローカルデータベース
 
